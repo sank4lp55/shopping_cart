@@ -118,7 +118,28 @@ class _MyCartState extends State<MyCart> {
                     ),
                   )
                 ],
-              )
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Expanded(child: Container()),
+                  Container(
+                    width: 120,
+                    height: 50,
+                    //decoration: BoxDecoration(color: Colors.black),
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.purple.shade300,
+                            shape: RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(25)))),
+                        onPressed: () => {},
+                        child: Text("Your Total")),
+                  )
+                ],
+              ),
             ],
           ),
         ),
