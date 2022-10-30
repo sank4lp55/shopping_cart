@@ -15,57 +15,112 @@ class _MyCartState extends State<MyCart> {
   final MyController c = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(30),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                Text(
-                  "Books",
-                  style: TextStyle(fontSize: 30, color: Colors.amber),
-                ),
-                Expanded(child: Container()),
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(25)),
-                      color: Colors.redAccent),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                    ),
-                    onPressed: () => null,
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          padding: const EdgeInsets.all(30),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  Text(
+                    "Books",
+                    style: TextStyle(fontSize: 30, color: Colors.orange),
                   ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Obx(() => Text("${c.books.toString()}")),
-                SizedBox(
-                  width: 20,
-                ),
-                Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(25)),
-                      color: Colors.redAccent),
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.remove,
-                      color: Colors.white,
+                  Expanded(child: Container()),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        color: Colors.redAccent),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      onPressed: () => c.incrementBooks(),
                     ),
-                    onPressed: () => null,
                   ),
-                )
-              ],
-            )
-          ],
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Obx(() => Text(
+                        "${c.books.toString()}",
+                        style: TextStyle(fontSize: 25),
+                      )),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        color: Colors.redAccent),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                      ),
+                      onPressed: () => c.decrementBooks(),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: [
+                  Text(
+                    "Pens",
+                    style: TextStyle(fontSize: 30, color: Colors.orange),
+                  ),
+                  Expanded(child: Container()),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        color: Colors.redAccent),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                      onPressed: () => c.incrementPens(),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Obx(() => Text(
+                        "${c.pens.toString()}",
+                        style: TextStyle(fontSize: 25),
+                      )),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(25)),
+                        color: Colors.redAccent),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.remove,
+                        color: Colors.white,
+                      ),
+                      onPressed: () => c.decrementPens(),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
