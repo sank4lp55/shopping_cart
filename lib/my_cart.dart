@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:shopping_cart/total_page.dart';
 
 class MyCart extends StatefulWidget {
-  MyCart({super.key});
+  const MyCart({super.key});
 
   @override
   State<MyCart> createState() => _MyCartState();
