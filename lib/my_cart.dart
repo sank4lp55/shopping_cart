@@ -1,15 +1,18 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:shopping_cart/my_controller.dart';
+import 'package:get/get.dart';
 
 class MyCart extends StatefulWidget {
-  const MyCart({super.key});
+  MyCart({super.key});
 
   @override
   State<MyCart> createState() => _MyCartState();
 }
 
 class _MyCartState extends State<MyCart> {
+  final MyController c = Get.put(MyController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +43,11 @@ class _MyCartState extends State<MyCart> {
                   ),
                 ),
                 SizedBox(
-                  width: 40,
+                  width: 20,
+                ),
+                Obx(() => Text("${c.books.toString()}")),
+                SizedBox(
+                  width: 20,
                 ),
                 Container(
                   width: 50,
