@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_cart/my_controller.dart';
 import 'package:get/get.dart';
+import 'package:shopping_cart/total_page.dart';
 
 class MyCart extends StatefulWidget {
   MyCart({super.key});
@@ -135,9 +136,9 @@ class _MyCartState extends State<MyCart> {
                             shape: RoundedRectangleBorder(
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(25)))),
-                        onPressed: () => {},
+                        onPressed: () => {Get.to(() => TotalPage())},
                         child: Text("Your Total")),
-                  )
+                  ),
                 ],
               ),
             ],

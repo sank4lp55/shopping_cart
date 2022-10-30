@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 class MyController extends GetxController {
   var books = 0.obs;
   var pens = 0.obs;
+  int get total => books.value + pens.value;
   incrementBooks() {
     books.value++;
   }
@@ -20,7 +21,7 @@ class MyController extends GetxController {
     }
   }
 
-   incrementPens() {
+  incrementPens() {
     pens.value++;
   }
 
